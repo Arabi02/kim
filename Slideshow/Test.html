@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+	html{
+		background-color: #01a95e;
+	}
+
+
+</style>
+</head>
+<body>
+
+
+<div>
+  <img id="main-image" />
+</div>
+<div>
+  <button onclick="show_image('left')">&lt;</button>
+  <button onclick="show_image('right')">&gt;</button>
+</div>
+
+
+<script>
+  
+var images = ['bilde1.jpg','bilde2.jpg','bilde3.jpg','bilde4.jpg','bilde5.jpg','bilde6.jpg','bilde7.jpg','bilde8.jpg','bilde10.jpg','bilde11.jpg','bilde12.jpg'];
+
+
+var index = 0;
+
+var the_image = document.getElementById("main-image");
+the_image.src = images[0];
+
+
+function show_image(direction)
+{
+  if (direction == "left")
+  {
+    index--;
+  }
+  else
+  {
+    index++;
+    index %= images.length;
+  }
+
+  if (index < 0)
+  {
+    index = images.length - 1;
+  }
+  
+  the_image.src = images[index];
+}
+</script>
+</body>
+</html>
